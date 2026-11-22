@@ -1,0 +1,19 @@
+{
+  "_comment": "v3 pareto: Heretic-style two objectives with KL target 0.01. Tested and dropped (same KL as kl_first, more refusals left).",
+  "pairs": 200,
+  "n_eval": 80,
+  "cal": 96,
+  "k": 8,
+  "contrast": "bulk",
+  "clip": 1.0,
+  "quant": "",
+  "final_quant": "",
+  "edit_mode": "hook",
+  "objective": "pareto",
+  "trials": 150,
+  "kl_target": 0.01,
+  "refusal_tol": 0.02,
+  "cal_tol": 0.05,
+  "batch": 16,
+  "study_journal": "auto"
+}

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+type: software
+title: "Removing refusals with less damage: a controlled comparison of a searched refusal-direction edit against Heretic and OBLITERATUS"
+authors:
+  - name: "Matrix (NuevaTech LLC)"
+version: "0.3.2"
+date-released: "2026-11-22"
+license: Apache-2.0
+repository-code: "https://github.com/Limitlessmatrix/<repo>"
+url: "https://github.com/Limitlessmatrix/<repo>"
+keywords:
+  - abliteration
+  - refusal direction
+  - model editing
+  - KL divergence
+  - LLM safety evaluation
+  - red teaming

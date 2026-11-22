@@ -1,0 +1,28 @@
+# ablate
+
+> Low-damage refusal-direction editing ("abliteration") for open-weight language models: a KL-first, judge-in-the-loop Optuna search over the edit (v3.2), a CPU stream baker, a rank-k LoRA exporter, and a held-out evaluation protocol (StrongREJECT, OR-Bench, Dolly KL, Qwen3Guard judge, lm-eval, paired Holm tests). Apache-2.0, NuevaTech LLC. Research and red-team use on self-hosted weights.
+
+Key facts: the main entry point is `scripts/abliterate.py --config configs/v32_kljgrid.json`; only held-out, judged numbers are results; report medians over three seeds; compare tools at matched refusal.
+
+## Docs
+
+- [README](README.md): what it does, measured results, quickstart, hardware, limitations, responsible use
+- [AGENTS.md](AGENTS.md): layout, commands, config keys, invariants for coding agents
+- [Method](docs/METHOD.md): the edit, the search, and what changed in v2, v3 kl_first, v3 pareto, v3.1, v3.2
+- [Evaluation protocol](docs/PROTOCOL.md): data, judge, KL, capability benchmarks, statistics, comparison rules
+
+## Code
+
+- [scripts/abliterate.py](scripts/abliterate.py): extraction, search, final scoring, model card
+- [ablate/search.py](ablate/search.py): objectives, rank-1 grid, trial selection
+- [ablate/apply.py](ablate/apply.py): the projection edit and kernels over depth
+- [ablate/streambake.py](ablate/streambake.py): shard-by-shard bake
+- [ablate/adapter.py](ablate/adapter.py): LoRA export
+- [eval/eval_contender.py](eval/eval_contender.py): held-out generation, KL, lm-eval
+- [eval/report.py](eval/report.py): paired tests and report
+
+## Optional
+
+- [configs/](configs/): argument defaults of every study version
+- [CITATION.cff](CITATION.cff): how to cite
+- [LICENSE](LICENSE): Apache-2.0

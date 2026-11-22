@@ -1,0 +1,14 @@
+{
+  "_comment": "v2 (study baseline): scalar objective refusal + KL (1:1), phrase-matched refusal, 32 trials, weight edits, in-memory checkpoint saved to <out>/ckpt-edited. Rank range 1..ABLATE_K_MAX (default 4). The study used --clip 1.0 on every model.",
+  "pairs": 200,
+  "n_eval": 80,
+  "cal": 96,
+  "k": 8,
+  "contrast": "bulk",
+  "clip": 1.0,
+  "quant": "",
+  "final_quant": "",
+  "trials": 32,
+  "objective": "scalar",
+  "save_weights": true
+}

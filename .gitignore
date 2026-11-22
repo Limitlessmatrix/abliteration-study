@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.venv/
+venv/
+# built search sets, run outputs, evaluation work dirs, model files: never commit
+data/
+runs/
+bakeoff/
+*.safetensors
+*.gguf
+*.pt
+*.journal

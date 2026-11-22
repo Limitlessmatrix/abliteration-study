@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ablate"
+version = "0.3.2"
+description = "Low-damage refusal-direction editing (abliteration) with a KL-first, judge-in-the-loop search, a stream baker, a LoRA exporter and a held-out evaluation protocol."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Matrix (NuevaTech LLC)" }]
+requires-python = ">=3.10"
+# Versions are the ones every reported number was produced with. torch is left open so you can pick the build
+# that matches your CUDA (the evaluation environment of the study used torch 2.13 with CUDA 12.6).
+dependencies = [
+    "torch>=2.7",
+    "transformers==5.20.2",
+    "accelerate==1.15.0",
+    "safetensors==0.8.0",
+    "sentencepiece==0.2.2",
+    "optuna==5.0.0",
+    "huggingface_hub",
+    "scikit-learn",
+    "numpy",
+]
+
+[project.optional-dependencies]
+# evaluation protocol: lm-eval capability benchmarks (eval/eval_contender.py)
+eval = ["lm-eval[hf]==0.4.13"]
+# batch judging of held-out answers (eval/judge.py); the study used vLLM 0.32.0
+judge = ["vllm==0.32.0"]
+# Stage 5 healing LoRA (off by default, not used by any reported version)
+heal = ["peft==0.21.2"]
+# --bnb 4bit / 8bit hook-mode searches on models that do not fit in bf16
+bnb = ["bitsandbytes"]
+dev = ["pytest", "tokenizers"]
+
+[project.scripts]
+ablate = "ablate.cli:main"
+
+[tool.setuptools]
+packages = ["ablate"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

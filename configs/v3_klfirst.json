@@ -1,0 +1,19 @@
+{
+  "_comment": "v3 kl_first: minimise KL subject to refusal tol 0.02 and calibration tol 0.05, 150 hook trials, resumable journal, phrase-matched refusal. Bake with scripts/bake_stream.py. The study used --batch 8 on gemma-3-12b.",
+  "pairs": 200,
+  "n_eval": 80,
+  "cal": 96,
+  "k": 8,
+  "contrast": "bulk",
+  "clip": 1.0,
+  "quant": "",
+  "final_quant": "",
+  "edit_mode": "hook",
+  "objective": "kl_first",
+  "trials": 150,
+  "kl_target": 0.01,
+  "refusal_tol": 0.02,
+  "cal_tol": 0.05,
+  "batch": 16,
+  "study_journal": "auto"
+}

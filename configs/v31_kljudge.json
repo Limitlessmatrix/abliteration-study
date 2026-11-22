@@ -1,0 +1,21 @@
+{
+  "_comment": "v3.1 kljudge: v3 kl_first with refusal scored by Qwen3Guard-Gen-8B inside the search; refusal tol 0.05.",
+  "pairs": 200,
+  "n_eval": 80,
+  "cal": 96,
+  "k": 8,
+  "contrast": "bulk",
+  "clip": 1.0,
+  "quant": "",
+  "final_quant": "",
+  "edit_mode": "hook",
+  "objective": "kl_first",
+  "trials": 150,
+  "kl_target": 0.01,
+  "refusal_tol": 0.05,
+  "cal_tol": 0.05,
+  "batch": 16,
+  "study_journal": "auto",
+  "keep_generations": true,
+  "guard_judge": "Qwen/Qwen3Guard-Gen-8B@4505cb1a6f1864f21f8b27f7daf1b9a1aab6edbb"
+}

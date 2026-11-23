@@ -4,6 +4,13 @@
 
 Key facts: the main entry point is `scripts/abliterate.py --config configs/v32_kljgrid.json`; only held-out, judged numbers are results; report medians over three seeds; compare tools at matched refusal.
 
+## Paper and data
+
+- [Paper](paper/PAPER.md): Removing refusals with less damage: what worked, what did not, and why (findings in sections 6 and 7, every table in 5)
+- [results.json](paper/data/results.json): every result row (model, contender, seed, refusal, harm_comply, overrefusal, kl, kl_first, mmlu, arc, gsm8k)
+- [paired_tests.csv](paper/data/paired_tests.csv): 598 paired tests with Holm-corrected p-values
+- [Data guide](paper/data/README.md): ids and metric definitions
+
 ## Docs
 
 - [README](README.md): what it does, measured results, quickstart, hardware, limitations, responsible use

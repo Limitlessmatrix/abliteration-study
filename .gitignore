@@ -14,3 +14,6 @@ bakeoff/
 *.gguf
 *.pt
 *.journal
+
+# the paper's results data IS published
+!paper/data/

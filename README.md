@@ -13,9 +13,13 @@ What it contains:
 - **A stream baker** (`scripts/bake_stream.py`): writes the edited checkpoint shard by shard on CPU; every tensor
   the edit does not touch is byte-identical to the base, which `scripts/compare_ckpt.py` verifies.
 - **A LoRA exporter** (`scripts/export_adapter.py`): the edit as a rank-k PEFT adapter (exact when the edit has no
-  norm restore, which is true of every v3.2 winner in the study).
+  norm restore, which is true of every v3.2 winner in the study except Qwen3.8-27B, whose winner used column norm
+  restore).
 - **The evaluation protocol** (`eval/`): StrongREJECT / OR-Bench / Dolly loaded from public sources at runtime,
   judged refusal, full-vocabulary KL, lm-eval MMLU / ARC / GSM8K, McNemar and bootstrap tests with Holm correction.
+
+**The study:** [paper/PAPER.md](paper/PAPER.md) (what worked, what did not, and why), with every number as data in
+[paper/data/](paper/data/README.md).
 
 Method details: [docs/METHOD.md](docs/METHOD.md). Evaluation protocol: [docs/PROTOCOL.md](docs/PROTOCOL.md).
 Guide for coding agents: [AGENTS.md](AGENTS.md).
